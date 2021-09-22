@@ -1,7 +1,7 @@
 var express = require('express');
 // var mysql = require('mysql');
 var ejsMate = require('ejs-mate');
-
+const { Sequelize } = require('sequelize');
 var postRoutes = require("./routes/posts");
 
 var app = express();
@@ -11,6 +11,22 @@ var app = express();
 // 	user: 'root',
 // 	database : 'mysql'
 // });
+const sequelize = new Sequelize('mysql', 'root', '', {
+		host: 'localhost',
+		dialect: 'mysql'
+});
+
+( async() => {
+try {
+	const { QueryTypes } = require('sequelize');
+	const posts = await sequelize.query("SELECT * FROM posts", { type: QueryTypes.SELECT });
+	console.log(posts);
+	// sequelize.authenticate();
+	console.log('success ')
+} catch (error) {
+	console.log('error: ', error);
+}
+})();
 
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
