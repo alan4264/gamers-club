@@ -28,6 +28,22 @@ app.get('/', (req, res) => {
 	res.render('home');
 });
 
+app.get('/posts', (req, res) => {
+	res.render('posts/index');
+});
+
+app.get('/posts/new', (req, res) => {
+	res.render('posts/new');
+});
+
+app.get('/posts/:id', (req, res) => {
+	res.render('posts/show');
+});
+
+app.get('/posts/:id/edit', (req, res) => {
+	res.render('posts/edit');
+});
+
 app.listen(3000, function() {
 	console.log("Server running on 3030");
 });
