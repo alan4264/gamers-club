@@ -2,19 +2,16 @@ const express = require('express');
 const router = express.Router();
 const posts = require('../controllers/posts');
 
-app.get('/posts', posts.index);
+router.route("/")
+	.get(posts.index);
 
-app.get('/posts/new', (req, res) => {
-	res.render('posts/new');
-});
+router.route("/new")
+	.get(posts.renderNewForm);
 
-app.get('/posts/:id', (req, res) => {
-	res.render('posts/show');
-});
+router.route("/:id")
+	.get(posts.show);
 
-app.get('/posts/:id/edit', (req, res) => {
-	res.render('posts/edit');
-});
+router.route("/:id/edit")
+	.get(posts.renderEditForm);
 
-router.route('/')
-	.get()
+module.exports = router;

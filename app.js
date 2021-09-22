@@ -1,8 +1,8 @@
-// var faker = require('faker');
-
 var express = require('express');
 var mysql = require('mysql');
 var ejsMate = require('ejs-mate');
+
+var postRoutes = require("./routes/posts");
 
 var app = express();
 
@@ -24,25 +24,27 @@ app.set('view engine', 'ejs');
 // 	});
 // });
 
+app.use("/posts", postRoutes);
+
 app.get('/', (req, res) => {
 	res.render('home');
 });
 
-app.get('/posts', (req, res) => {
-	res.render('posts/index');
-});
+// app.get('/posts', (req, res) => {
+// 	res.render('posts/index');
+// });
 
-app.get('/posts/new', (req, res) => {
-	res.render('posts/new');
-});
+// app.get('/posts/new', (req, res) => {
+// 	res.render('posts/new');
+// });
 
-app.get('/posts/:id', (req, res) => {
-	res.render('posts/show');
-});
+// app.get('/posts/:id', (req, res) => {
+// 	res.render('posts/show');
+// });
 
-app.get('/posts/:id/edit', (req, res) => {
-	res.render('posts/edit');
-});
+// app.get('/posts/:id/edit', (req, res) => {
+// 	res.render('posts/edit');
+// });
 
 app.listen(3000, function() {
 	console.log("Server running on 3030");
