@@ -1,24 +1,22 @@
-DROP DATABASE gamers_club;
-CREATE DATABASE gamers_club;
-USE gamers_club;
+USE mysql;
 
 # CREATE TABLE users (
 #     id INT AUTO_INCREMENT PRIMARY KEY, 
 #     username VARCHAR(255) UNIQUE NOT NULL, 
 #     description TEXT
 # );
-
+DROP TABLE posts;
 CREATE TABLE posts (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(100) NOT NULL,
-    text_content TEXT,
+    content TEXT
     # author_id INT NOT NULL,
     # game_id INT NOT NULL,
     # created_at TIMESTAMP DEFAULT NOW(),
     # FOREIGN KEY (author_id) REFERENCES users(id)
 );
 
-INSERT INTO posts(title) VALUES ("First Post");
+INSERT INTO posts(title, content) VALUES ("Post 1", "aaaaaa");
 # CREATE TABLE comments (
 #     id INT AUTO_INCREMENT PRIMARY KEY,
 #     text_content VARCHAR(255) NOT NULL,

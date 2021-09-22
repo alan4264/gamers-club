@@ -1,16 +1,16 @@
 var express = require('express');
-var mysql = require('mysql');
+// var mysql = require('mysql');
 var ejsMate = require('ejs-mate');
 
 var postRoutes = require("./routes/posts");
 
 var app = express();
 
-var connection = mysql.createConnection({
-	host: 'localhost',
-	user: 'root',
-	database : 'mysql'
-});
+// var connection = mysql.createConnection({
+// 	host: 'localhost',
+// 	user: 'root',
+// 	database : 'mysql'
+// });
 
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
