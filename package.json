@@ -1,0 +1,27 @@
+{
+  "name": "gamers-club",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "app.js",
+  "dependencies": {
+    "ejs": "^3.1.6",
+    "ejs-mate": "^3.0.0",
+    "express": "^4.17.1",
+    "faker": "^5.5.3",
+    "mysql": "^2.18.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://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@github.com/alan4264/gamers-club.git"
+  },
+  "author": "Fengqing Zhou",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alan4264/gamers-club/issues"
+  },
+  "homepage": "https://github.com/alan4264/gamers-club#readme"
+}
