@@ -11,10 +11,11 @@ module.exports.renderNewForm = function (req, res) {
 }
 
 module.exports.show = async function (req, res) {
-	const val = await Post.f();
-	const a = val;
-	const b = val;
-	res.render('posts/show', {a, b});
+	const post = await Post.findById(parseInt(req.params.id));
+	if (post) {
+		res.render('posts/show', { post });
+	}
+	
 }
 
 module.exports.renderEditForm = function (req, res) {
