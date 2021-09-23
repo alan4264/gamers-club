@@ -2,11 +2,15 @@ var express = require('express');
 const session = require("express-session");
 // var mysql = require('mysql');
 var ejsMate = require('ejs-mate');
+const bodyParser = require('body-parser');
 const { Sequelize } = require('sequelize');
 var postRoutes = require("./routes/posts");
 const flash = require("connect-flash");
 
 var app = express();
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true}));
 
 // From express-session npm page:
 const sessionConfig = {
@@ -14,11 +18,10 @@ const sessionConfig = {
 	resave: false,
 	saveUninitialized: true,
 	cookie: {
-		secure: true,
+		// secure: true,
 		maxAge: 60000
 	}
 }
-
 app.use(session(sessionConfig));
 app.use(flash());
 
@@ -36,6 +39,11 @@ const sequelize = new Sequelize('mysql', 'root', '', {
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
 
+app.use((req, res, next) => {
+	console.log(req.method + ' ' + req.path);
+	next();
+})
+
 app.use("/posts", postRoutes);
 
 
@@ -43,10 +51,6 @@ app.get('/', (req, res) => {
 	res.render('home');
 });
 
-app.use((req, res, next) => {
-	console.log(req.query);
-	next();
-})
 app.listen(3000, function() {
 	console.log("Server running on 3000");
 });
