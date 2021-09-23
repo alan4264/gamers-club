@@ -8,7 +8,7 @@ USE mysql;
 DROP TABLE posts;
 CREATE TABLE posts (
     id INT AUTO_INCREMENT PRIMARY KEY,
-    title VARCHAR(100) NOT NULL,
+    title VARCHAR(60) NOT NULL,
     content TEXT
     # author_id INT NOT NULL,
     # game_id INT NOT NULL,
