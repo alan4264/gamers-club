@@ -63,5 +63,5 @@ app.get('/', (req, res) => {
 // });
 
 app.listen(3000, function() {
-	console.log("Server running on 3030");
+	console.log("Server running on 3000");
 });

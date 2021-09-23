@@ -9,6 +9,7 @@ DROP TABLE posts;
 CREATE TABLE posts (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(60) NOT NULL,
+    image_url VARCHAR(255) NOT NULL,
     content TEXT
     # author_id INT NOT NULL,
     # game_id INT NOT NULL,
@@ -16,7 +17,7 @@ CREATE TABLE posts (
     # FOREIGN KEY (author_id) REFERENCES users(id)
 );
 
-INSERT INTO posts(title, content) VALUES ("Post 1", "aaaaaa");
+INSERT INTO posts(title, image_url, content) VALUES ("Post 1", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!");
 # CREATE TABLE comments (
 #     id INT AUTO_INCREMENT PRIMARY KEY,
 #     text_content VARCHAR(255) NOT NULL,
@@ -49,7 +50,7 @@ INSERT INTO posts(title, content) VALUES ("Post 1", "aaaaaa");
 #     id INT AUTO_INCREMENT PRIMARY KEY,
 #     url VARCHAR(255) NOT NULL
 # );
-
+# INSERT INTO images(url) VALUES ("https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg");
 # CREATE TABLE post_images (
 #     post_id INT NOT NULL,
 #     image_id INT NOT NULL,

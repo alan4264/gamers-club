@@ -12,7 +12,9 @@ module.exports.renderNewForm = function (req, res) {
 
 module.exports.show = async function (req, res) {
 	const post = await Post.findById(parseInt(req.params.id));
-	if (post) {
+	if (post == null) {
+		
+	} else {
 		res.render('posts/show', { post });
 	}
 	

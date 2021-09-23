@@ -18,17 +18,10 @@ const Post = sequelize.define('Post', {
 		type: DataTypes.TEXT
 	}
 });
-// , {
-// 	classMethods: {
-// 		f: function() {
-// 			return "a";
-// 		}
-// 	}
-// });
+
 Post.findById = async function findById(id) {
 	const post = await sequelize.query('SELECT * FROM posts WHERE id = ?;', {replacements: [id], type: QueryTypes.SELECT });
-	console.log(post);
-	return post[0];
+	return (post.length == 1 ? post[0] : null);
 }
 
 module.exports = Post;
