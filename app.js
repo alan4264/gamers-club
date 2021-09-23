@@ -5,6 +5,7 @@ var ejsMate = require('ejs-mate');
 const bodyParser = require('body-parser');
 const { Sequelize } = require('sequelize');
 var postRoutes = require("./routes/posts");
+const userRoutes = require('./routes/users');
 const flash = require("connect-flash");
 
 var app = express();
@@ -45,7 +46,7 @@ app.use((req, res, next) => {
 })
 
 app.use("/posts", postRoutes);
-
+app.use('/users', userRoutes);
 
 app.get('/', (req, res) => {
 	res.render('home');

@@ -4,6 +4,7 @@ const sequelize = new Sequelize('mysql', 'root', '', {
 		dialect: 'mysql'
 });
 
+// Maybe I don't need this part. Use mysql instead, no sequelize.
 const Post = sequelize.define('Post', {
 	id: {
 		type: DataTypes.INTEGER,

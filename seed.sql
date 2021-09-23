@@ -46,6 +46,8 @@ INSERT INTO posts(title, image_url, content) VALUES ("Post 1", "https://res.clou
 #     name VARCHAR(255) NOT NULL
 # );
 
+# Uninplemented tables:
+
 # CREATE TABLE images (
 #     id INT AUTO_INCREMENT PRIMARY KEY,
 #     url VARCHAR(255) NOT NULL
