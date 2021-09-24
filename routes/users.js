@@ -8,6 +8,6 @@ passportConfig(passport);
 
 router.route("/register")
 	.get(users.renderRegister)
-	.post(passport.authenticate('local-signup'), users.renderRegister);
+	.post(passport.authenticate('local-signup', { failureFlash: true, failureRedirect: '/posts'}), users.renderRegister);
 
 module.exports = router;
