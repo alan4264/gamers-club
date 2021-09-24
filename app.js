@@ -7,11 +7,14 @@ const { Sequelize } = require('sequelize');
 var postRoutes = require("./routes/posts");
 const userRoutes = require('./routes/users');
 const flash = require("connect-flash");
+const passport = require('passport');
+const methodOverride = require('method-override');
 
 var app = express();
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true}));
+app.use(methodOverride('_method'));
 
 // From express-session npm page:
 const sessionConfig = {
@@ -40,8 +43,26 @@ const sequelize = new Sequelize('mysql', 'root', '', {
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
 
+// print the request:
 app.use((req, res, next) => {
-	console.log(req.method + ' ' + req.path);
+	console.log(req.method + ' ' + req.path + " " + JSON.stringify(res.body, null, 2));
+	next();
+})
+
+// app.post(function (req, res) {
+//   res.setHeader('Content-Type', 'text/plain')
+//   res.write('you posted:\n')
+//   res.end(JSON.stringify(req.body, null, 2))
+// })
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use((req, res, next) => {
+	// console.log(req.query);
+	res.locals.currentUser = req.user;
+	res.locals.success = req.flash("success");
+	res.locals.error = req.flash("error");
 	next();
 })
 

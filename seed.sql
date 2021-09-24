@@ -1,10 +1,12 @@
-USE mysql;
+USE gamers_club;
 
-# CREATE TABLE users (
-#     id INT AUTO_INCREMENT PRIMARY KEY, 
-#     username VARCHAR(255) UNIQUE NOT NULL, 
-#     description TEXT
-# );
+DROP TABLE users;
+CREATE TABLE users (
+    username VARCHAR(50) PRIMARY KEY, 
+    password VARCHAR(50) NOT NULL
+);
+INSERT INTO users(username, password) VALUES ("a", "a");
+
 DROP TABLE posts;
 CREATE TABLE posts (
     id INT AUTO_INCREMENT PRIMARY KEY,
@@ -16,8 +18,8 @@ CREATE TABLE posts (
     # created_at TIMESTAMP DEFAULT NOW(),
     # FOREIGN KEY (author_id) REFERENCES users(id)
 );
-
 INSERT INTO posts(title, image_url, content) VALUES ("Post 1", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!");
+
 # CREATE TABLE comments (
 #     id INT AUTO_INCREMENT PRIMARY KEY,
 #     text_content VARCHAR(255) NOT NULL,
