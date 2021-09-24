@@ -37,14 +37,16 @@ app.use(flash());
 // 	user: 'root',
 // 	database : 'mysql'
 // });
-const sequelize = new Sequelize('mysql', 'root', '', {
-		host: 'localhost',
-		dialect: 'mysql'
-});
+
+// const sequelize = new Sequelize('mysql', 'root', '', {
+// 		host: 'localhost',
+// 		dialect: 'mysql'
+// });
 
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
+app.use(express.static(path.join(__dirname, 'public')));
 
 // print the request:
 app.use((req, res, next) => {

@@ -19,7 +19,10 @@ CREATE TABLE posts (
     # FOREIGN KEY (author_id) REFERENCES users(id)
 );
 INSERT INTO posts(title, image_url, content) VALUES ("Post 1", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!");
-
+INSERT INTO posts(title, image_url, content) VALUES ("Post 2", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!");
+INSERT INTO posts(title, image_url, content) VALUES ("Post 3", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!");
+INSERT INTO posts(title, image_url, content) VALUES ("Post 4", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!");
+INSERT INTO posts(title, image_url, content) VALUES ("Post 5", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!");
 # CREATE TABLE comments (
 #     id INT AUTO_INCREMENT PRIMARY KEY,
 #     text_content VARCHAR(255) NOT NULL,

@@ -1,15 +1,15 @@
 <% layout('/layouts/boilerplate') %>
 <h1>All Posts</h1>
 <a href="/posts/new" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Create a post</a>
-<div class="row row-cols-1 row-cols-md-2 g-4 mt-3">
+<div class="row row-cols-1 row-cols-md-auto g-4 mt-3">
 	<% for (let post of posts) { %>
 	<div class="col">
-		<div class="card" style="width: 18rem;">
-			<img src="<%= post.image_url %>" alt="..." />
+		<a href="/posts/<%= post.id %>" class="card" style="width: 20rem;">
 			<div class="card-body">
 				<h5 class="card-title"><%= post.title %></h5>
 			</div>
-		</div>
+			<img src="<%= post.image_url %>" class="card-img-bottom" alt="..." />
+		</a>
 	</div>
 	<% } %>
 </div>

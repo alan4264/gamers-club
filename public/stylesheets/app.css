@@ -1,0 +1,10 @@
+.card-body{
+	padding-top: 0.5rem;
+	padding-right: 0.5rem;
+	padding-bottom: 0.5rem;
+	padding-left: 1rem;
+}
+a.card{
+	color: #212529;
+	text-decoration: none;
+}

@@ -2,8 +2,9 @@
 // const sequelize = new Sequelize("")
 const Post = require('../models/post');
 
-module.exports.index = function (req, res) {
-	res.render('posts/index');
+module.exports.index = async function (req, res) {
+	const posts = await Post.findAll();
+	res.render('posts/index', { posts });
 }
 
 module.exports.renderNewForm = function (req, res) {

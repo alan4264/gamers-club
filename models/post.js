@@ -24,15 +24,18 @@ const mysql = require('mysql2');
 const connection = mysql.createConnection({
 	host: 'localhost',
 	user: 'root',
-	password: '',
+	// password: '',
 	database: 'gamers_club'
 });
 Post = new Object();
 Post.findById = async function findById(id) {
-	var q = "SELECT * FROM posts WHERE id = " + id;
-	const [ post ] = await connection.promise().query(q);
-	console.log(post);
-	return post.length == 0 ? null : post[0];
+	const query = "SELECT * FROM posts WHERE id = " + id;
+	const [ posts ] = await connection.promise().query(query);
+	return posts.length == 0 ? null : posts[0];
 }
-
+Post.findAll = async function findAll() {
+	const query = "SELECT * FROM posts";
+	const [ posts ] = await connection.promise().query(query);
+	return posts;
+}
 module.exports = Post;
