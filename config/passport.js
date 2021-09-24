@@ -30,7 +30,7 @@ module.exports = function(passport) {
 			connection.query(q, (err, userList) => {
 				if (err) return callback(err);
 				if (userList.length) {
-					return callback(null, false, req.flash('signupMessage', 'The username is already taken.'));
+					return callback(null, false, req.flash('error', 'The username is already taken.'));
 				} else {
 					var newUser = new Object();
 					newUser.username = username;
@@ -54,10 +54,10 @@ module.exports = function(passport) {
 			connection.query("SELECT * FROM users WHERE username = " + username, function(err, rows) {
 				if (err) return callback(err);
 				if (!rows.length) {
-					return callback(null, false, req.flash('loginMessage', 'No user found.'));
+					return callback(null, false, req.flash('error', 'No user found.'));
 				}
 				if (rows[0].password != password) {
-					return callback(null, false, req.flash('loginMessage', 'Wrong password.'));
+					return callback(null, false, req.flash('error', 'Wrong password.'));
 				}
 				return callback(null, rows[0]);
 			});
