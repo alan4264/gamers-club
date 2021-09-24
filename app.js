@@ -9,6 +9,8 @@ const userRoutes = require('./routes/users');
 const flash = require("connect-flash");
 const passport = require('passport');
 const methodOverride = require('method-override');
+const path = require('path');
+const ExpressError = require('./utils/ExpressError');
 
 var app = express();
 
@@ -42,6 +44,7 @@ const sequelize = new Sequelize('mysql', 'root', '', {
 
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
 
 // print the request:
 app.use((req, res, next) => {
@@ -71,6 +74,10 @@ app.use('/users', userRoutes);
 
 app.get('/', (req, res) => {
 	res.render('home');
+});
+
+app.all('*', (req, res, next) => {
+	next(new ExpressError('Page Not Found', 404));
 });
 
 app.use((err, req, res, next) => {
