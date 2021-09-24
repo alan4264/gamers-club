@@ -14,7 +14,7 @@ module.exports.renderNewForm = function (req, res) {
 module.exports.show = async function (req, res) {
 	const post = await Post.findById(parseInt(req.params.id));
 	if (post == null) {
-		req.flash('info', 'Cannot find that post.');
+		req.flash('error', 'Cannot find that post.');
 		return res.redirect("/posts");
 	} else {
 		res.render('posts/show', { post });

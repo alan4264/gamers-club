@@ -4,6 +4,7 @@ const posts = require('../controllers/posts');
 
 router.route("/")
 	.get(posts.index);
+	// .post()
 
 router.route("/new")
 	.get(posts.renderNewForm);
