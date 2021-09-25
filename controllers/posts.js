@@ -1,5 +1,3 @@
-// const {Sequelize, DataTypes} = require("sequelize");
-// const sequelize = new Sequelize("")
 const Post = require('../models/post');
 
 module.exports.index = async function (req, res) {
@@ -9,6 +7,10 @@ module.exports.index = async function (req, res) {
 
 module.exports.renderNewForm = function (req, res) {
 	res.render('posts/new');
+}
+
+module.exports.createPost = async (req, res) => {
+	
 }
 
 module.exports.show = async function (req, res) {

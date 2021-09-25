@@ -1,12 +1,6 @@
 const LocalStrategy = require('passport-local').Strategy;
-// const mysql = require('mysql');
 const dbConnection = require('./db');
-// const connection = mysql.createConnection({
-// 	host: 'localhost',
-// 	user: 'root',
-// 	password: process.env.DB_PASSWORD,
-// 	database: 'gamers_club'
-// });
+
 module.exports = function (passport) {
 	passport.serializeUser((userObject, callback) => {
 		console.log("passport.serializeUser");

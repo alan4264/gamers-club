@@ -4,7 +4,6 @@ const session = require("express-session");
 // var mysql = require('mysql');
 var ejsMate = require('ejs-mate');
 const bodyParser = require('body-parser');
-// const { Sequelize } = require('sequelize');
 var postRoutes = require("./routes/posts");
 const userRoutes = require('./routes/users');
 const flash = require("connect-flash");
@@ -31,18 +30,6 @@ const sessionConfig = {
 }
 app.use(session(sessionConfig));
 app.use(flash());
-
-// mysql connection:
-// var connection = mysql.createConnection({
-// 	host: 'localhost',
-// 	user: 'root',
-// 	database : 'mysql'
-// });
-
-// const sequelize = new Sequelize('mysql', 'root', '', {
-// 		host: 'localhost',
-// 		dialect: 'mysql'
-// });
 
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');

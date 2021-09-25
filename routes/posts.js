@@ -3,8 +3,8 @@ const router = express.Router();
 const posts = require('../controllers/posts');
 
 router.route("/")
-	.get(posts.index);
-	// .post()
+	.get(posts.index)
+	.post(posts.createPost);
 
 router.route("/new")
 	.get(posts.renderNewForm);
