@@ -10,7 +10,10 @@ module.exports.renderNewForm = function (req, res) {
 }
 
 module.exports.createPost = async (req, res) => {
-	
+	const newPostId = await Post.create(req.body.post);
+	console.log(newPostId);
+	req.flash('success', "Successfully created a new post.");
+	res.redirect(`/posts/${newPostId}`);
 }
 
 module.exports.show = async function (req, res) {
@@ -21,7 +24,7 @@ module.exports.show = async function (req, res) {
 	} else {
 		res.render('posts/show', { post });
 	}
-	
+
 }
 
 module.exports.renderEditForm = function (req, res) {
