@@ -1,9 +1,10 @@
+require('dotenv').config();
 var express = require('express');
 const session = require("express-session");
 // var mysql = require('mysql');
 var ejsMate = require('ejs-mate');
 const bodyParser = require('body-parser');
-const { Sequelize } = require('sequelize');
+// const { Sequelize } = require('sequelize');
 var postRoutes = require("./routes/posts");
 const userRoutes = require('./routes/users');
 const flash = require("connect-flash");
@@ -15,7 +16,7 @@ const ExpressError = require('./utils/ExpressError');
 var app = express();
 
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: true}));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 
 // From express-session npm page:
@@ -85,9 +86,9 @@ app.all('*', (req, res, next) => {
 app.use((err, req, res, next) => {
 	const { statusCode = 500 } = err;
 	if (!err.message) err.message = "Something went wrong.";
-	res.status(statusCode).render('error', {err});
+	res.status(statusCode).render('error', { err });
 });
 
-app.listen(3000, function() {
+app.listen(3000, function () {
 	console.log("Server running on 3000");
 });

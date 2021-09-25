@@ -1,13 +1,15 @@
+DROP DATABASE IF EXISTS gamers_club;
+CREATE DATABASE gamers_club;
 USE gamers_club;
 
-DROP TABLE users;
+DROP TABLE IF EXISTS users;
 CREATE TABLE users (
     username VARCHAR(50) PRIMARY KEY, 
     password VARCHAR(50) NOT NULL
 );
 INSERT INTO users(username, password) VALUES ("a", "a");
 
-DROP TABLE posts;
+DROP TABLE IF EXISTS posts;
 CREATE TABLE posts (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(60) NOT NULL,
