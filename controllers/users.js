@@ -1,13 +1,17 @@
-// const User = require('../models/user');
+const passport = require('passport');
+const passportConfig = require('../config/passport');
 
-module.exports.renderRegister = function (req, res) {
+passportConfig(passport);
+
+module.exports.renderRegister = (req, res) => {
 	res.render('users/register');
 }
 
-module.exports.register = async (req, res, next) => {
+module.exports.registerSuccessful = async (req, res, next) => {
 	try {
-		await passport.authenticate('local-signup', { failureFlash: true, failureRedirect: '/users/register' });
-		await passport.authenticate('local-login', { failureFlash: true, failureRedirect: '/users/login' });
+		
+		req.flash('success', 'Wecome to Gamers Club!');
+		res.redirect('/posts');
 	} catch (e) {
 		req.flash('error', e.message);
 		res.redirect('/users/register');
@@ -15,19 +19,18 @@ module.exports.register = async (req, res, next) => {
 }
 
 module.exports.renderLogin = (req, res) => {
-	res.render('/users/login');
+	res.render('users/login');
 }
 
 module.exports.login = async (req, res) => {
 	try {
-		await passport.authenticate('local-login', { failureFlash: true, failureRedirect: '/users/login' });
 		req.flash('success', "Welcome back!");
 		const redirectUrl = req.session.returnTo || '/posts';
 		delete req.session.returnTo;
 		res.redirect(redirectUrl);
 	} catch (e) {
 		req.flash('error', e.message);
-		res.redirect('/users/login')
+		res.redirect('/users/login');
 	}
 }
 

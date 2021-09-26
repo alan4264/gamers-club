@@ -8,15 +8,15 @@ passportConfig(passport);
 
 router.route("/register")
 	.get(users.renderRegister)
-	.post(users.register);
+	.post(passport.authenticate('local-signup', { failureFlash: true, failureRedirect: '/users/register' }), 
+		passport.authenticate('local-login', { failureFlash: true, failureRedirect: '/users/login' }));
+		// users.registerSuccessful);
 
 router.route('/login')
 	.get(users.renderLogin)
-	.post(users.login);
+	.post(passport.authenticate('local-login', { failureFlash: true, failureRedirect: '/users/login' }), users.login);
 
 router.route('/logout')
 	.get(users.logout);
-
-
 
 module.exports = router;

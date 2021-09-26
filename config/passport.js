@@ -4,13 +4,14 @@ const dbConnection = require('./db');
 module.exports = function (passport) {
 	passport.serializeUser((userObject, callback) => {
 		console.log("passport.serializeUser");
+		console.log(userObject);
 		callback(null, userObject.username);
 	});
 	passport.deserializeUser((username, callback) => {
 		console.log("passport.deserializeUser");
 		dbConnection.query("SELECT * FROM users WHERE username = '" + username + "'", (err, userList) => {
-			if (err) throw err;
-			return callback(err, userList[0])
+			// if (err) throw err;
+			callback(err, userList[0]);
 		});
 	});
 	passport.use('local-signup', new LocalStrategy(
@@ -20,6 +21,7 @@ module.exports = function (passport) {
 			passReqToCallback: true
 		},
 		function (req, username, password, callback) {
+			console.log('passport->local-signup');
 			const q = "SELECT * FROM users WHERE username = '" + username + "'";
 			console.log(q);
 			dbConnection.query(q, (err, userList) => {
@@ -46,7 +48,9 @@ module.exports = function (passport) {
 			passReqToCallback: true
 		},
 		function (req, username, password, callback) {
-			dbConnection.query("SELECT * FROM users WHERE username = " + username, function (err, rows) {
+			console.log('passport->local-login');
+			const query = "SELECT * FROM users WHERE username = '" + username + "'";
+			dbConnection.query(query, function (err, rows) {
 				if (err) return callback(err);
 				if (!rows.length) {
 					return callback(null, false, req.flash('error', 'No user found.'));
