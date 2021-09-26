@@ -8,7 +8,15 @@ passportConfig(passport);
 
 router.route("/register")
 	.get(users.renderRegister)
-	.post(passport.authenticate('local-signup', { failureFlash: true, failureRedirect: '/users/register'}), 
-		  users.renderRegister);
+	.post(users.register);
+
+router.route('/login')
+	.get(users.renderLogin)
+	.post(users.login);
+
+router.route('/logout')
+	.get(users.logout);
+
+
 
 module.exports = router;
