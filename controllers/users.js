@@ -9,8 +9,7 @@ module.exports.renderRegister = (req, res) => {
 
 module.exports.registerSuccessful = async (req, res, next) => {
 	try {
-		
-		req.flash('success', 'Wecome to Gamers Club!');
+		req.flash('success', 'Welcome to Gamers Club!');
 		res.redirect('/posts');
 	} catch (e) {
 		req.flash('error', e.message);
@@ -22,7 +21,7 @@ module.exports.renderLogin = (req, res) => {
 	res.render('users/login');
 }
 
-module.exports.login = async (req, res) => {
+module.exports.loginSuccessful = async (req, res) => {
 	try {
 		req.flash('success', "Welcome back!");
 		const redirectUrl = req.session.returnTo || '/posts';
