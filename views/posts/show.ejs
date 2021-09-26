@@ -1,12 +1,14 @@
 <% layout('/layouts/boilerplate') %>
 <div class="container">
 	<div class="row">
-		<div class="col-2"></div>
-		<div class="col-8 border">
+		<!-- <div class="col-2"></div> -->
+		<div class="col-12 border">
 			<h1><%=post.title%></h1>
 			<img src="<%=post.image_url%>" class="img-fluid" />
-			<p><%=post.content%></p>
+			<div class="mt-2">
+				<p><%=post.content%></p>
+			</div>
 		</div>
-		<div class="col-2"></div>
+		<!-- <div class="col-2"></div> -->
 	</div>
 </div>

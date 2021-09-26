@@ -11,6 +11,7 @@ const passport = require('passport');
 const methodOverride = require('method-override');
 const path = require('path');
 const ExpressError = require('./utils/ExpressError');
+const posts = require('./controllers/posts');
 
 var app = express();
 
@@ -62,9 +63,8 @@ app.use((req, res, next) => {
 app.use("/posts", postRoutes);
 app.use('/users', userRoutes);
 
-app.get('/', (req, res) => {
-	res.render('home');
-});
+app.get('/', posts.index);
+
 
 app.all('*', (req, res, next) => {
 	next(new ExpressError('Page Not Found', 404));

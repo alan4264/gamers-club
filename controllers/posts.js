@@ -1,11 +1,11 @@
 const Post = require('../models/post');
 
-module.exports.index = async function (req, res) {
+module.exports.index = async (req, res) => {
 	const posts = await Post.findAll();
 	res.render('posts/index', { posts });
 }
 
-module.exports.renderNewForm = function (req, res) {
+module.exports.renderNewForm = (req, res) => {
 	res.render('posts/new');
 }
 
@@ -16,7 +16,7 @@ module.exports.createPost = async (req, res) => {
 	res.redirect(`/posts/${newPostId}`);
 }
 
-module.exports.show = async function (req, res) {
+module.exports.show = async (req, res) => {
 	const post = await Post.findById(parseInt(req.params.id));
 	if (post == null) {
 		req.flash('error', 'Cannot find that post.');
@@ -27,6 +27,6 @@ module.exports.show = async function (req, res) {
 
 }
 
-module.exports.renderEditForm = function (req, res) {
+module.exports.renderEditForm = (req, res) => {
 	res.render('posts/edit');
 }
