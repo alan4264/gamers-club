@@ -1,18 +1,18 @@
 <% layout('/layouts/boilerplate') %>
-    <h1>New Post</h1>
-    <form action="/posts" method="POST">
-        <div class="mb-3">
-            <label for="title" class="form-label">Title: </label>
-            <input type="text" class="form-control" id="title" name="post[title]" required>
-        </div>
-        <div class="mb-3">
-            <label for="image_url" class="form-label">Image URL: </label>
-            <input type="url" class="form-control" id="image_url" name="post[image_url]" required>
-        </div>
-        <div class="mb-3">
-            <label for="content" class="form-label">Content: </label>
-            <textarea class="form-control" id="image_url" name="post[content]" required></textarea>
+<h1>New Post</h1>
+<form action="/posts" method="POST">
+    <div class="mb-3">
+        <label for="title" class="form-label">Title: </label>
+        <input type="text" class="form-control" id="title" name="post[title]" required>
+    </div>
+    <div class="mb-3">
+        <label for="image_url" class="form-label">Image URL: </label>
+        <input type="url" class="form-control" id="image_url" name="post[image_url]" required>
+    </div>
+    <div class="mb-3">
+        <label for="content" class="form-label">Content: </label>
+        <textarea class="form-control" id="image_url" name="post[content]" required></textarea>
 
-        </div>
-        <button type="submit" class="btn btn-primary">Create Post</button>
-    </form>
+    </div>
+    <button type="submit" class="btn btn-primary">Create Post</button>
+</form>
