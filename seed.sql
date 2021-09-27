@@ -8,23 +8,25 @@ CREATE TABLE users (
     password VARCHAR(50) NOT NULL
 );
 INSERT INTO users(username, password) VALUES ("a", "a");
+INSERT INTO users(username, password) VALUES ("b", "b");
 
 DROP TABLE IF EXISTS posts;
 CREATE TABLE posts (
     id INT AUTO_INCREMENT PRIMARY KEY,
     title VARCHAR(60) NOT NULL,
     image_url VARCHAR(255) NOT NULL,
-    content TEXT
-    # author_id INT NOT NULL,
+    content TEXT,
+    author_username VARCHAR(50) NOT NULL,
+    category ENUM('FPS', 'Base Building', 'Racing', 'Strategy', 'Sports'),
     # game_id INT NOT NULL,
     # created_at TIMESTAMP DEFAULT NOW(),
-    # FOREIGN KEY (author_id) REFERENCES users(id)
+    FOREIGN KEY (author_username) REFERENCES users(username)
 );
-INSERT INTO posts(title, image_url, content) VALUES ("Post 1", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!");
-INSERT INTO posts(title, image_url, content) VALUES ("Post 2", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!");
-INSERT INTO posts(title, image_url, content) VALUES ("Post 3", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!");
-INSERT INTO posts(title, image_url, content) VALUES ("Post 4", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!");
-INSERT INTO posts(title, image_url, content) VALUES ("Post 5", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!");
+INSERT INTO posts(title, image_url, content, author_username) VALUES ("Post 1", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!", "a");
+INSERT INTO posts(title, image_url, content, author_username) VALUES ("Post 2", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!", "a");
+INSERT INTO posts(title, image_url, content, author_username) VALUES ("Post 3", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!", "a");
+INSERT INTO posts(title, image_url, content, author_username) VALUES ("Post 4", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!", "a");
+INSERT INTO posts(title, image_url, content, author_username) VALUES ("Post 5", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!", "a");
 # CREATE TABLE comments (
 #     id INT AUTO_INCREMENT PRIMARY KEY,
 #     text_content VARCHAR(255) NOT NULL,

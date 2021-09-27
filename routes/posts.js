@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const posts = require('../controllers/posts');
+const { isLoggedIn, isAuthor } = require('../middleware');
 
 router.route("/")
 	.get(posts.index)
@@ -10,7 +11,8 @@ router.route("/new")
 	.get(posts.renderNewForm);
 
 router.route("/:id")
-	.get(posts.show);
+	.get(posts.show)
+	.delete(isLoggedIn, isAuthor, posts.deletePost);
 
 router.route("/:id/edit")
 	.get(posts.renderEditForm);

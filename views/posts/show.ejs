@@ -1,14 +1,18 @@
 <% layout('/layouts/boilerplate') %>
+
 <div class="container">
 	<div class="row">
-		<!-- <div class="col-2"></div> -->
 		<div class="col-12 border">
 			<h1><%=post.title%></h1>
 			<img src="<%=post.image_url%>" class="img-fluid" />
 			<div class="mt-2">
 				<p><%=post.content%></p>
 			</div>
+			<% if (currentUser && post.author_username === currentUser.username) {%>
+			<a href="#" class="btn btn-primary">Edit</a>
+			<a href="#" class="btn btn-primary">Delete</a>
+			<% } %> 
 		</div>
-		<!-- <div class="col-2"></div> -->
+
 	</div>
 </div>

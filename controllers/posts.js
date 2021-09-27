@@ -27,6 +27,13 @@ module.exports.show = async (req, res) => {
 
 }
 
+module.exports.deletePost = async (req, res) => {
+	const { id } = req.params;
+	await Post.findByIdAndDelete(id);
+	req.flash('success', 'Successfully deleted post');
+	res.redirect('/posts');
+}
+
 module.exports.renderEditForm = (req, res) => {
 	res.render('posts/edit');
 }

@@ -26,7 +26,7 @@ const sessionConfig = {
 	saveUninitialized: true,
 	cookie: {
 		// secure: true,
-		maxAge: 60000
+		maxAge: 60000 * 60 * 24 * 90 // === 90 days
 	}
 }
 app.use(session(sessionConfig));
