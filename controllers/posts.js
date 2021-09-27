@@ -10,7 +10,9 @@ module.exports.renderNewForm = (req, res) => {
 }
 
 module.exports.createPost = async (req, res) => {
-	const newPostId = await Post.create(req.body.post);
+	const newPost = req.body.post;
+	newPost.author_username = req.user.username;
+	const newPostId = await Post.create(newPost);
 	console.log(newPostId);
 	req.flash('success', "Successfully created a new post.");
 	res.redirect(`/posts/${newPostId}`);
@@ -30,7 +32,7 @@ module.exports.show = async (req, res) => {
 module.exports.deletePost = async (req, res) => {
 	const { id } = req.params;
 	await Post.findByIdAndDelete(id);
-	req.flash('success', 'Successfully deleted post');
+	req.flash('success', 'Successfully deleted post.');
 	res.redirect('/posts');
 }
 
