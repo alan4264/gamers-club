@@ -19,6 +19,7 @@ module.exports.createPost = async (req, res) => {
 }
 
 module.exports.show = async (req, res) => {
+	console.log(req.params);
 	const post = await Post.findById(parseInt(req.params.id));
 	if (post == null) {
 		req.flash('error', 'Cannot find that post.');
@@ -47,5 +48,12 @@ module.exports.renderEditForm = async (req, res) => {
 }
 
 module.exports.editPost = async (req, res) => {
-	
+	const post = req.body.post;
+	const { id } = req.params;
+	post.id = id;
+	// console.log("editPost => ");
+	// console.log(req.params);
+	await Post.findByIdAndUpdate(post.id, post);
+	req.flash('success', 'Successfully editted post.');
+	res.redirect(`/posts/${id}`);
 }

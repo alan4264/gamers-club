@@ -39,7 +39,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // print the request:
 app.use((req, res, next) => {
-	console.log(req.method + ' ' + req.path + " " + JSON.stringify(res.body, null, 2));
+	console.log(req.method + ' ' + req.path + " " + JSON.stringify(req.body, null, 2));
 	next();
 })
 
