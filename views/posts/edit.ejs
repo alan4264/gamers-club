@@ -24,5 +24,9 @@
             <option value="Sports">Sports</option>
         </select>
     </div>
+    <div class="mb-3">
+        <label for="game_name" class="form-label">Game name: </label>
+        <input type="text" class="form-control" id="game_name" name="post[game_name]" value="<% post.game_name %>" required>
+    </div>
     <button type="submit" class="btn btn-primary">Update Post</button>
 </form>

@@ -21,8 +21,8 @@ Post.findAll = async function findAll() {
 	return posts;
 }
 Post.create = async function create(post) {
-	const query = "INSERT INTO posts(title, image_url, content, author_username, category) VALUES (?, ?, ?, ?, ?)";
-	const params = [ post.title, post.image_url, post.content, post.author_username, post.category ];
+	const query = "INSERT INTO posts(title, image_url, content, author_username, category, game_name) VALUES (?, ?, ?, ?, ?, ?)";
+	const params = [ post.title, post.image_url, post.content, post.author_username, post.category, post.game_name ];
 	const [result] = await dbConnection.promise().query(query, params);
 	return result.insertId;
 }
@@ -32,8 +32,8 @@ Post.findByIdAndDelete = async (id) => {
 	await dbConnection.promise().query(query, params);
 }
 Post.findByIdAndUpdate = async (id, post) => {
-	const query = "UPDATE posts SET title = ?, image_url = ?, content = ?, category = ? WHERE id = ?";
-	const params = [ post.title, post.image_url, post.content, post.category, id ];
+	const query = "UPDATE posts SET title = ?, image_url = ?, content = ?, category = ?, game_name = ? WHERE id = ?";
+	const params = [ post.title, post.image_url, post.content, post.category, post.game_name, id ];
 	await dbConnection.promise().query(query, params);
 }
 

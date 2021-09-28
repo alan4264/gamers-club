@@ -18,15 +18,15 @@ CREATE TABLE posts (
     content TEXT,
     author_username VARCHAR(50) NOT NULL,
     category ENUM('FPS', 'Base Building', 'Racing', 'Strategy', 'Sports'),
-    # game_id INT NOT NULL,
+    game_name VARCHAR(60),
     # created_at TIMESTAMP DEFAULT NOW(),
     FOREIGN KEY (author_username) REFERENCES users(username)
 );
-INSERT INTO posts(title, image_url, content, author_username, category) VALUES ("Post 1", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!", "a", 'FPS');
-INSERT INTO posts(title, image_url, content, author_username, category) VALUES ("Post 2", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!", "b", 'Base Building');
-INSERT INTO posts(title, image_url, content, author_username, category) VALUES ("Post 3", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!", "b", 'Racing');
-INSERT INTO posts(title, image_url, content, author_username, category) VALUES ("Post 4", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!", "a", 'Strategy');
-INSERT INTO posts(title, image_url, content, author_username, category) VALUES ("Post 5", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!", "a", 'Sports');
+INSERT INTO posts(title, image_url, content, author_username, category, game_name) VALUES ("When you build your first train network", "https://res.cloudinary.com/doiyuhvem/image/upload/v1632864971/gamers-club/download_ssqqtf.gif", "Look at this!", "a", 'Base Building', 'Factorio');
+INSERT INTO posts(title, image_url, content, author_username, category, game_name) VALUES ("If a wrong item is on the belt", "https://res.cloudinary.com/doiyuhvem/image/upload/v1632867266/gamers-club/download_1_xrqtzl.gif", "Look at this!", "b", 'Base Building', 'Factorio');
+INSERT INTO posts(title, image_url, content, author_username, category, game_name) VALUES ("Post 3", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!", "b", 'Racing', 'GameName');
+INSERT INTO posts(title, image_url, content, author_username, category, game_name) VALUES ("Post 4", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!", "a", 'Strategy', 'GameName');
+INSERT INTO posts(title, image_url, content, author_username, category, game_name) VALUES ("Post 5", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!", "a", 'Sports', 'GameName');
 # CREATE TABLE comments (
 #     id INT AUTO_INCREMENT PRIMARY KEY,
 #     text_content VARCHAR(255) NOT NULL,

@@ -8,6 +8,10 @@
 		<a href="/posts/<%= post.id %>" class="card" style="width: 26rem;">
 			<div class="card-body">
 				<h5 class="card-title"><%= post.title %></h5>
+				<div class="d-flex justify-content-end">
+					<h6><%= post.game_name %></h6>
+					</p>
+				</div>
 			</div>
 			<img src="<%= post.image_url %>" class="card-img-bottom" alt="..." />
 		</a>
