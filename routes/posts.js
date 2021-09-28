@@ -12,7 +12,7 @@ router.route("/new")
 
 router.route("/:id")
 	.get(posts.show)
-	// .put(isLoggedIn, isAuthor, posts.editPost)
+	.put(isLoggedIn, isAuthor, posts.editPost)
 	.delete(isLoggedIn, isAuthor, posts.deletePost);
 
 router.route("/:id/edit")

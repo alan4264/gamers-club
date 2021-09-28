@@ -9,7 +9,9 @@
 				<p><%=post.content%></p>
 			</div>
 			<% if (currentUser && post.author_username === currentUser.username) {%>
-			<a href="#" class="btn btn-primary">Edit</a>
+			<form class="d-inline" action="/posts/<%=post.id%>/edit">
+				<button class="btn btn-info">Edit</button>
+			</form>
 			<form class="d-inline" action="/posts/<%=post.id%>?_method=DELETE" method="POST">
 				<button class="btn btn-danger">Delete</button>
 			</form>

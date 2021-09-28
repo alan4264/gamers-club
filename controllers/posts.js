@@ -36,6 +36,16 @@ module.exports.deletePost = async (req, res) => {
 	res.redirect('/posts');
 }
 
-module.exports.renderEditForm = (req, res) => {
-	res.render('posts/edit');
+module.exports.renderEditForm = async (req, res) => {
+	const { id } = req.params;
+	const post = await Post.findById(id);
+	if (!post) {
+		req.flash('error', 'Cannot find that post!');
+		return res.redirect('/posts');
+	}
+	res.render('posts/edit', { post });
+}
+
+module.exports.editPost = async (req, res) => {
+	
 }
