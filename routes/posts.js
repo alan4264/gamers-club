@@ -8,7 +8,10 @@ router.route("/")
 	.post(isLoggedIn, posts.createPost);
 
 router.route("/new")
-	.get(posts.renderNewForm);
+	.get(isLoggedIn, posts.renderNewForm);
+
+router.route("/categories/:category")
+	.get(posts.indexByCategory);
 
 router.route("/:id")
 	.get(posts.show)

@@ -1,4 +1,4 @@
 
 
-User = new Object();
+// User = new Object();
 // User.register = async

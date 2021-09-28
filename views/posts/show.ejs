@@ -7,6 +7,10 @@
 			<img src="<%=post.image_url%>" class="img-fluid" />
 			<div class="mt-2">
 				<p><%=post.content%></p>
+				<div class="d-flex justify-content-end">
+					<p>Category: &nbsp;</p>
+					<a href="/posts/categories/<%= post.category %>"><%= post.category %> </a>
+				</div>
 			</div>
 			<% if (currentUser && post.author_username === currentUser.username) {%>
 			<form class="d-inline" action="/posts/<%=post.id%>/edit">

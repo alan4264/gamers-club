@@ -22,11 +22,11 @@ CREATE TABLE posts (
     # created_at TIMESTAMP DEFAULT NOW(),
     FOREIGN KEY (author_username) REFERENCES users(username)
 );
-INSERT INTO posts(title, image_url, content, author_username) VALUES ("Post 1", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!", "a");
-INSERT INTO posts(title, image_url, content, author_username) VALUES ("Post 2", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!", "a");
-INSERT INTO posts(title, image_url, content, author_username) VALUES ("Post 3", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!", "a");
-INSERT INTO posts(title, image_url, content, author_username) VALUES ("Post 4", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!", "a");
-INSERT INTO posts(title, image_url, content, author_username) VALUES ("Post 5", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!", "a");
+INSERT INTO posts(title, image_url, content, author_username, category) VALUES ("Post 1", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!", "a", 'FPS');
+INSERT INTO posts(title, image_url, content, author_username, category) VALUES ("Post 2", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!", "b", 'Base Building');
+INSERT INTO posts(title, image_url, content, author_username, category) VALUES ("Post 3", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!", "b", 'Racing');
+INSERT INTO posts(title, image_url, content, author_username, category) VALUES ("Post 4", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!", "a", 'Strategy');
+INSERT INTO posts(title, image_url, content, author_username, category) VALUES ("Post 5", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!", "a", 'Sports');
 # CREATE TABLE comments (
 #     id INT AUTO_INCREMENT PRIMARY KEY,
 #     text_content VARCHAR(255) NOT NULL,

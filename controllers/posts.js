@@ -2,7 +2,7 @@ const Post = require('../models/post');
 
 module.exports.index = async (req, res) => {
 	const posts = await Post.findAll();
-	res.render('posts/index', { posts });
+	res.render('posts/index', { category: 'All', posts });
 }
 
 module.exports.renderNewForm = (req, res) => {
@@ -56,4 +56,10 @@ module.exports.editPost = async (req, res) => {
 	await Post.findByIdAndUpdate(post.id, post);
 	req.flash('success', 'Successfully editted post.');
 	res.redirect(`/posts/${id}`);
+}
+
+module.exports.indexByCategory = async (req, res) => {
+	const { category } = req.params;
+	const posts = await Post.findByCategory(category);
+	res.render('posts/index', { category, posts });
 }

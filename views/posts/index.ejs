@@ -1,5 +1,6 @@
 <% layout('/layouts/boilerplate') %>
-<h1>All Posts</h1>
+
+<h1><%= category %> Posts</h1>
 <a href="/posts/new" class="btn btn-primary btn-lg" tabindex="-1" role="button" aria-disabled="true">Create a post</a>
 <div class="row row-cols-1 row-cols-md-auto g-4 mt-3">
 	<% for (let post of posts) { %>

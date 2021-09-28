@@ -12,7 +12,17 @@
     </div>
     <div class="mb-3">
         <label for="content" class="form-label">Content: </label>
-        <textarea class="form-control" id="image_url" name="post[content]" required></textarea>
+        <textarea class="form-control" id="content" name="post[content]" required></textarea>
+    </div>
+    <div class="mb-3">
+        <label class="form-label d-block" for="category">Category:</label>
+        <select class="form-select" id="category" name="post[category]" required>
+            <option value="FPS">FPS</option>
+            <option value="Base Building">Base Building</option>
+            <option value="Racing">Racing</option>
+            <option value="Strategy">Strategy</option>
+            <option value="Sports">Sports</option>
+        </select>
     </div>
     <button type="submit" class="btn btn-primary">Create Post</button>
 </form>
