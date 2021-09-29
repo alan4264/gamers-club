@@ -22,11 +22,22 @@ CREATE TABLE posts (
     # created_at TIMESTAMP DEFAULT NOW(),
     FOREIGN KEY (author_username) REFERENCES users(username)
 );
-INSERT INTO posts(title, image_url, content, author_username, category, game_name) VALUES ("When you build your first train network", "https://res.cloudinary.com/doiyuhvem/image/upload/v1632864971/gamers-club/download_ssqqtf.gif", "Look at this!", "a", 'Base Building', 'Factorio');
-INSERT INTO posts(title, image_url, content, author_username, category, game_name) VALUES ("If a wrong item is on the belt", "https://res.cloudinary.com/doiyuhvem/image/upload/v1632867266/gamers-club/download_1_xrqtzl.gif", "Look at this!", "b", 'Base Building', 'Factorio');
-INSERT INTO posts(title, image_url, content, author_username, category, game_name) VALUES ("Post 3", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!", "b", 'Racing', 'GameName');
-INSERT INTO posts(title, image_url, content, author_username, category, game_name) VALUES ("Post 4", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!", "a", 'Strategy', 'GameName');
-INSERT INTO posts(title, image_url, content, author_username, category, game_name) VALUES ("Post 5", "https://res.cloudinary.com/df3vvd3/image/upload/v1626293680/loxsihspedpwqllidiip.jpg", "Look at this!", "a", 'Sports', 'GameName');
+INSERT INTO posts(title, image_url, content, author_username, category, game_name) VALUES ("When you build your first train network", "https://res.cloudinary.com/doiyuhvem/image/upload/v1632864971/gamers-club/download_ssqqtf.gif", "", "a", 'Base Building', 'Factorio');
+INSERT INTO posts(title, image_url, content, author_username, category, game_name) VALUES ("If a wrong item is on the belt", "https://res.cloudinary.com/doiyuhvem/image/upload/v1632867266/gamers-club/download_1_xrqtzl.gif", "", "a", 'Base Building', 'Factorio');
+INSERT INTO posts(title, image_url, content, author_username, category, game_name) VALUES ("Track-making Train", "https://res.cloudinary.com/doiyuhvem/image/upload/v1632867686/gamers-club/download_2_tnpjbr.gif", "this was the most fun thing I have accidentally done in factorio so far and I've enjoyed lots of things about this game", "a", 'Base Building', 'Factorio');
+INSERT INTO posts(title, image_url, content, author_username, category, game_name) VALUES ("Beach Farm", "https://res.cloudinary.com/doiyuhvem/image/upload/v1632868127/gamers-club/download_ipm68m.jpg", "", "a", 'Base Building', 'Stardew Valley');
+INSERT INTO posts(title, image_url, content, author_username, category, game_name) VALUES ("Let's take a walk", "https://res.cloudinary.com/doiyuhvem/image/upload/v1632868270/gamers-club/download_1_fekm7s.jpg", "Vincent , Jas and Penny", "a", 'Base Building', 'Stardew Valley');
+INSERT INTO posts(title, image_url, content, author_username, category, game_name) VALUES ("Marnie's family", "https://res.cloudinary.com/doiyuhvem/image/upload/v1632868514/gamers-club/download_2_cjayhn.jpg", "", "a", 'Base Building', 'Stardew Valley');
+INSERT INTO posts(title, image_url, content, author_username, category, game_name) VALUES ("Evaluation", "https://res.cloudinary.com/doiyuhvem/image/upload/v1632868788/gamers-club/download_rzphsm.jpg", "Sometimes some of the animals in the coop don't produce anything at all. When I first started playing it was very obvious which one of my chickens wouldn't fork over the goods.", "a", 'Base Building', 'Stardew Valley');
+INSERT INTO posts(title, image_url, content, author_username, category, game_name) VALUES ("Dont kill me", "https://res.cloudinary.com/doiyuhvem/image/upload/v1632869791/gamers-club/download_s6ovyb.gif", "", "a", 'FPS', 'CS: GO');
+INSERT INTO posts(title, image_url, content, author_username, category, game_name) VALUES ("Surprise", "https://res.cloudinary.com/doiyuhvem/image/upload/v1632870070/gamers-club/download_1_kozyhn.gif", "", "a", 'FPS', 'CS: GO');
+INSERT INTO posts(title, image_url, content, author_username, category, game_name) VALUES ("Silver Rank", "https://res.cloudinary.com/doiyuhvem/image/upload/v1632870212/gamers-club/download_2_wcsqvu.gif", "", "a", 'FPS', 'CS: GO');
+INSERT INTO posts(title, image_url, content, author_username, category, game_name) VALUES ("When you're bored of the main quest...", "https://res.cloudinary.com/doiyuhvem/image/upload/v1632880920/gamers-club/download_yaten4.gif", "", "a", 'FPS', 'PUBG: BATTLEGROUNDS');
+INSERT INTO posts(title, image_url, content, author_username, category, game_name) VALUES ("Praise The Pan", "https://res.cloudinary.com/doiyuhvem/image/upload/v1632881226/gamers-club/1501854226_winv3_sict3p.gif", "He Protec, but He Also Attac", "a", 'FPS', 'PUBG: BATTLEGROUNDS');
+INSERT INTO posts(title, image_url, content, author_username, category, game_name) VALUES ("Car", "https://res.cloudinary.com/doiyuhvem/image/upload/v1632881446/gamers-club/download_xd2lst.jpg", "", "a", 'FPS', 'PUBG: BATTLEGROUNDS');
+INSERT INTO posts(title, image_url, content, author_username, category, game_name) VALUES ("road kill evasion", "https://res.cloudinary.com/doiyuhvem/image/upload/v1632881508/gamers-club/download_1_m1myan.gif", "LOL", "a", 'FPS', 'PUBG: BATTLEGROUNDS');
+INSERT INTO posts(title, image_url, content, author_username, category, game_name) VALUES ("title", "image_url", "content", "a", 'FPS', 'PUBG: BATTLEGROUNDS');
+
 # CREATE TABLE comments (
 #     id INT AUTO_INCREMENT PRIMARY KEY,
 #     text_content VARCHAR(255) NOT NULL,
