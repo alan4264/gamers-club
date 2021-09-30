@@ -1,7 +1,6 @@
 require('dotenv').config();
 var express = require('express');
 const session = require("express-session");
-// var mysql = require('mysql');
 var ejsMate = require('ejs-mate');
 const bodyParser = require('body-parser');
 var postRoutes = require("./routes/posts");
@@ -19,7 +18,6 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 
-// From express-session npm page:
 const sessionConfig = {
 	secret: 'keyboard cat',
 	resave: false,
