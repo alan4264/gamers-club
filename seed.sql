@@ -1,6 +1,6 @@
-DROP DATABASE IF EXISTS gamers_club;
-CREATE DATABASE gamers_club;
-USE gamers_club;
+-- DROP DATABASE IF EXISTS gamers_club;
+-- CREATE DATABASE gamers_club;
+-- USE gamers_club;
 
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
