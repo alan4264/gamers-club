@@ -3,7 +3,7 @@
 This app is deployed on <https://gamers-club.herokuapp.com>
 
 ## Introduction
-This web application let gamers share their interesting experience when playing games.
+This is a web application that lets gamers share their interesting experience when playing games. Technologies used include HTML, CSS, JavaScript, Node.js, MySQL, BootStrap, Express, EJS, and Passport.
 ## Features
 - Browse all posts
 - Browse posts by category
