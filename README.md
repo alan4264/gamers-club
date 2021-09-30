@@ -3,7 +3,7 @@
 This app is deployed on <https://gamers-club.herokuapp.com>
 
 ## Introduction
-A web application that let gamers share their interesting experience when playing games.
+This web application let gamers share their interesting experience when playing games.
 ## Features
 - Browse all posts
 - Browse posts by category
